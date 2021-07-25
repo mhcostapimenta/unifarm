@@ -216,6 +216,21 @@ function unifarm_customize ( $wp_customize ){
     )
   ); 
 
+  // CHECKBOX SESSÃO APOIO
+  $wp_customize->add_setting( 
+    'set_checkbox_apoio', array(
+    'default' => '',
+  ));
+
+  //add control
+  $wp_customize->add_control( 
+      'set_checkbox_apoio_control', array(
+      'label' => 'Mostra/esconde sessão APOIO',
+      'type'  => 'checkbox', // this indicates the type of control
+      'section' => 'sec_infos_empresa',
+      'settings' => 'set_checkbox_apoio'
+  ));
+
 }
 
 add_action( 'customize_register', 'unifarm_customize' );

@@ -15,8 +15,8 @@
 
 <body>
     <section id="topo">
-        <div id="waterMark"></div>
-        <div id="textBox">
+        <div id="waterMark" class="slide-in-blurred-top"></div>
+        <div id="textBox" class="slide-in-left" style="animation-delay: .5s">
             <h1 class="title txtDarkBlue"><?php echo get_theme_mod('set_titulo_home'); ?></h1>
             <div class="separator"></div>
             <p class="paragraph mb-5"><?php echo get_theme_mod('set_texto_empresa'); ?></p>

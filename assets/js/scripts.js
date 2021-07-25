@@ -67,6 +67,10 @@ $(document).ready(function () {
   }
 
   limpaWidgetImg();
+
+  // Mascara de digitação dos forms
+  $('.cpf').mask('000.000.000-00');
+  $('.telefone').mask('(00)00000-0000');
 });
 
 // Função para ativar animação pelo Scroll

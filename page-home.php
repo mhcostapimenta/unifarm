@@ -5,17 +5,17 @@
 <section id="quemsomos">
     <div class="row">
         <div class="col-12 col-lg-6 col-xl-5 order-2 order-lg-1 col-esq">
-          <img class="img-fluid animate" src="<?php echo get_template_directory_uri().'/assets/img/quemSomosimg.png'?>" loading="lazy" data-effect="">
+          <img class="img-fluid animate" src="<?php echo get_template_directory_uri().'/assets/img/quemSomosimg.png'?>" loading="lazy" data-effect="slide-in-left">
         </div>
         <div class="col order-1 order-lg-2 boxFlex">
-            <div class="animate" data-effect="">
+            <div class="animate" data-effect="slide-in-right" style="animation-delay: 0">
                 <h2 class="subtitle txtGreen">QUEM SOMOS</h2>
                 <h1 class="title txtDarkBlue"><?php echo get_theme_mod('set_titulo_quemsomos'); ?></h1>
             </div>
-            <div class="boxText animate" data-effect="">
+            <div class="boxText animate" data-effect="slide-in-right" style="animation-delay: .5s">
                 <p class="paragraph"><?php echo get_theme_mod('set_texto_quemsomos'); ?></p>
             </div>
-            <div class="text-center text-lg-left mb-5 mb-lg-0 animate" data-effect=""><a class="btn button scrollSlow" role="button" href="#precadastro">QUERO FAZER PARTE</a></div>
+            <div class="text-center text-lg-left mb-5 mb-lg-0 animate" data-effect="slide-in-right" style="animation-delay: .7s"><a class="btn button scrollSlow" role="button" href="#precadastro">QUERO FAZER PARTE</a></div>
         </div>
     </div>
 </section>
@@ -23,7 +23,7 @@
 <!-- SESSÃO PORQUE A UNIFARM ? -->
 <section id="porqueaunifarm">
     <div class="container">
-        <div class="animte" data-effect="">
+        <div class="animate" data-effect="scale-in-center">
             <h2 class="subtitle txtWhite">PORQUE A UNIFARM ?</h2>
             <h1 class="title txtWhite"><?php echo get_theme_mod('set_titulo_porqueaunifarm'); ?></h1>
         </div>
@@ -34,9 +34,9 @@
 
                 $args = array(
                     'posts_per_page'=> -1,      // Mostrar quantidade padrão
-                    'post_type' => 'Flashes',  // Tipo de post
-                    'orderby' => 'title',				// Ordenar pelo titulo da Solução
-                    'order' => 'ASC' 						// Ordem Ascendente
+                    'post_type' => 'Flashes',   // Tipo de post
+                    'orderby' => 'title',		// Ordenar pelo titulo da Solução
+                    'order' => 'ASC' 		    // Ordem Ascendente
                 );
 
                 $loop = new WP_Query( $args );
@@ -75,11 +75,13 @@
 <!-- SESSÃO PRÉ-CADASTRO -->
 <section id="precadastro">
     <div class="container">
-        <div class="animate" data-effect="">
+        <div class="animate" data-effect="scale-in-center">
             <h2 class="subtitle txtGreen">QUERO FAZER PARTE DA UNIFARM</h2>
             <h1 class="title txtDarkBlue"><?php echo get_theme_mod('set_titulo_precadastro'); ?></h1>
         </div>
-        <div class="animate">
+
+        <!-- Formulário de pré-cadastro -->
+        <div class="animate" data-effect="scale-in-center" style="animation-delay: .5s">
           <!-- Carrega o Widget do Formulário de Pré-Cadastro -->
           <?php 
             if ( is_active_sidebar ('form-precadastro')) {
@@ -94,21 +96,21 @@
 <!-- SESSÃO FAQ -->
 <section id="faq">
     <div class="container">
-        <div class="animate" data-effect="">
+        <div class="animate" data-effect="scale-in-center">
             <h2 class="subtitle txtWhite">FAQ</h2>
             <h1 class="title txtWhite"><?php echo get_theme_mod('set_titulo_faq'); ?></h1>
         </div>
-        <div class="row animate" data-effect="">
+        <div class="animate" data-effect="scale-in-center" style="animation-delay: .5s">
             <div class="col">
 
               <!-- Aqui entra o loop Wordpress para mostrar os FAQs -->
               <?php
 
                   $args = array(
-                      'posts_per_page'=> -1,      // Mostrar quantidade padrão
-                      'post_type' => 'FAQs',      // Tipo de post
+                      'posts_per_page'=> -1,        // Mostrar quantidade padrão
+                      'post_type' => 'FAQs',        // Tipo de post
                       'orderby' => 'publish_date',  // Ordenar por data de publicação
-                      'order' => 'DESC'           // Ordem decrescente
+                      'order' => 'DESC'             // Ordem decrescente
                   );
 
                   $loop = new WP_Query( $args );
@@ -148,43 +150,57 @@
 </section>
 
 <!-- SESSÃO APOIO -->
-<section id="apoio">
-    <h1 class="title txtDarkBlue"><strong>APOIO</strong><br></h1>
-    <div class="row">
-        <div class="col">
-            <div class="owl-carousel owl-theme owl-loaded">
+<?php
 
-              <!-- Carrega o Widget os Logos -->
-              <?php 
-                  if ( is_active_sidebar ('logos-apoio')) {
-                      dynamic_sidebar('logos-apoio');
-                      }
-              ?>            
+    // Captura o valor do checkbox Mostra/esconde Sessão APOIO
+    $showApoio = get_theme_mod('set_checkbox_apoio');
 
+    // Se estiver setado, mostra a sessão.
+    if ( $showApoio == true ) {
+    ?>
+        <section id="apoio">
+            <h1 class="title txtDarkBlue">APOIO</h1>
+            <div class="row">
+                <div class="col">
+                    <div class="owl-carousel owl-theme owl-loaded">
+
+                    <!-- Carrega o Widget os Logos -->
+                    <?php 
+                        if ( is_active_sidebar ('logos-apoio')) {
+                            dynamic_sidebar('logos-apoio');
+                            }
+                    ?>            
+
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
+
+    <?php
+    }
+?>
 
 <!-- SESSÃO CONTATO -->
 <section id="contato">
     <div class="row">
         <div class="col mb-3 mb-lg-0">
-            <div class="colEsq animate" data-effect="">
+            <div class="colEsq animate" data-effect="slide-in-left">
                 <h2 class="subtitle txtGreen">CONTATO</h2>
                 <h1 class="title txtDarkBlue"><?php echo get_theme_mod('set_titulo_contato'); ?></h1>
 
-                <!-- Carrega o Widget do Formulário de Contato -->
-                <?php 
-                    if ( is_active_sidebar ('form-contato')) {
-                        dynamic_sidebar('form-contato');
-                        }
-                ?>  
+                <div class="animate" data-effect="slide-in-left" style="animation-delay: .5s">
+                    <!-- Carrega o Widget do Formulário de Contato -->
+                    <?php 
+                        if ( is_active_sidebar ('form-contato')) {
+                            dynamic_sidebar('form-contato');
+                            }
+                    ?>  
+                </div>
 
             </div>
         </div>
         <div class="col-12 col-lg-6 col-xl-5 col-dir">
-          <img class="img-fluid animate" src="<?php echo get_template_directory_uri().'/assets/img/contatoimg.png'?>" loading="lazy" data-effect="">
+          <img class="img-fluid animate" data-effect="slide-in-right" style="animation-delay: .7s" src="<?php echo get_template_directory_uri().'/assets/img/contatoimg.png'?>" loading="lazy" data-effect="">
         </div>
     </div>
 </section>

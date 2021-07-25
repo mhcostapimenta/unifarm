@@ -136,7 +136,7 @@ add_action( 'init', 'unifarm_FAQs', 0 );
 function unifarm_get_meta_box( $meta_boxes ) {
 	$prefix = 'unifarm-';
 
-	// Meta boxe do text area das Soluções
+	// Meta boxes Flahses
 	$meta_boxes[] = array(
 		'id' => 'flashes',
 		'title' => esc_html__( 'Informações sobre os flashes', 'unifarm' ),
@@ -162,28 +162,28 @@ function unifarm_get_meta_box( $meta_boxes ) {
 			),
 		),
 
-    // Regras de validação do text area das Soluções
+    // Regras de validação dos campos dos Flashes
     'validation' => array( 
       'rules'  => array(
             'unifarm-nomeDiferencial' => array(
                 'required'  => true,
-                'maxlength' => 400,
+                'maxlength' => 35,
           ),
 					'unifarm-txtDiferencial' => array(
 						'required'  => true,
-						'maxlength' => 700,
+						'maxlength' => 396,
 					),
       ), 
 
-    // Mensagens de erro do text area das Soluções
+    // Mensagens de erro dos campos dos Flashes
       'messages'  => array(
         'unifarm-nomeDiferencial' => array(
             'required'  => 'O nome do diferencial é obrigatório',
-            'maxlength' => 'Tamanho máximo é de 400 caracteres',
+            'maxlength' => 'Tamanho máximo é de 35 caracteres',
         ),
 				'unifarm-txtDiferencial' => array(
 					'required'  => 'O texto do diferencial é obrigatório',
-					'maxlength' => 'Tamanho máximo é de 700 caracteres',
+					'maxlength' => 'Tamanho máximo é de 395 caracteres',
 				),
       )
 
