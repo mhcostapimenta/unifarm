@@ -159,8 +159,8 @@
     if ( $showApoio == true ) {
     ?>
         <section id="apoio">
-            <h1 class="title txtDarkBlue">APOIO</h1>
-            <div class="row">
+            <h1 class="title txtDarkBlue animate" data-effect="scale-in-center">APOIO</h1>
+            <div class="row animate" data-effect="scale-in-center" style="animation-delay: .5s">
                 <div class="col">
                     <div class="owl-carousel owl-theme owl-loaded">
 

@@ -20,9 +20,9 @@ function unifarm_widgets(){
 
 	register_sidebar(
 		array(
-			'name' => 'Logos Apoio',
-			'id' => 'logos-apoio',
-			'description' => 'Logos da Sessão Apoio',
+			'name' => 'Formulário de Contato',
+			'id' => 'form-contato',
+			'description' => 'Formulário de Contato',
 			'before_widget' => '',
 			'after_widget' => '',
 			'before-title' => '<h2>',
@@ -32,9 +32,9 @@ function unifarm_widgets(){
 
 	register_sidebar(
 		array(
-			'name' => 'Formulário de Contato',
-			'id' => 'form-contato',
-			'description' => 'Formulário de Contato',
+			'name' => 'Logos Apoio',
+			'id' => 'logos-apoio',
+			'description' => 'Logos da Sessão Apoio',
 			'before_widget' => '',
 			'after_widget' => '',
 			'before-title' => '<h2>',

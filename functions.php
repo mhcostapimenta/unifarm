@@ -53,7 +53,7 @@ function unifarm_config() {
 		array(
 			'main_menu' => 'Main Menu',
 			'footer_menu' => 'Footer Menu',
-			'my_main_menu_interno' => 'Main Menu Interno',
+			'main_menu_interno' => 'Main Menu Interno',
 			'footer_menu_interno' => 'Footer Menu Interno',
 		)
 	);

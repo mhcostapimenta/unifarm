@@ -1,3 +1,17 @@
+<?php
+    if (is_front_page()) { // Se for, carregar o menu da Home
+
+    // Footer da página Home
+    $menu = 'footer_menu';
+
+    } else { // Se for qualquer outra página
+
+    // Topo da página Home
+    $menu = 'footer_menu_interno';
+
+    }
+?>
+
 <section id="footer">
         <div class="container">
             <div class="row">
@@ -9,7 +23,7 @@
                     <!-- Carrega o menu do Footer -->                
                     <?php
                             wp_nav_menu( array(
-                                'theme_location'    => 'footer_menu',
+                                'theme_location'    => $menu,
                                 'depth'             => 1,
                                 'container'         => false,
                                 'container_class'   => '',
@@ -30,7 +44,7 @@
                 </div>
             </div>
         </div>
-        <div id="footerBase"><span class="mb-3 mb-sm-0">Copyright (c) 2021 - Todos os direitos reservados à UNIFARM</span><span><a href="#">Política de privacidade</a></span></div>
+        <div id="footerBase"><span class="mb-3 mb-sm-0">Copyright (c) 2021 - Todos os direitos reservados à UNIFARM</span><span><a href="http://localhost/unifarm/privacidade/">Política de privacidade</a></span></div>
     </section>
     
     <a class="cd-top" href="#"></a>
