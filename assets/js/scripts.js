@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  // Controla o Acordion das perguntas
+  // Controla o Acordion das perguntas do FAQ
   $('.enunciado').click(function () {
     if ($(this).next('.resposta').hasClass('active')) {
       $(this).next('.resposta').removeClass('active').slideUp();
@@ -7,8 +7,9 @@ $(document).ready(function () {
       $('.pergunta .resposta').removeClass('active').slideUp();
       $(this).next('.resposta').addClass('active').slideDown();
     }
-  }); // Cria o carrousel da sesso APOIO
+  });
 
+  // Cria o carrousel da sesso APOIO
   $('.owl-carousel').owlCarousel({
     loop: true,
     margin: 10,
@@ -51,7 +52,7 @@ $(document).ready(function () {
     slideOut();
   });
 
-  // Rotina para limpar os atributos das imagens
+  // Rotina para limpar os atributos das imagens da Sessão Apoio
   function limpaWidgetImg() {
     $('#apoio figure')
       .removeClass('wp-block-image')
@@ -71,6 +72,18 @@ $(document).ready(function () {
   // Mascara de digitação dos forms
   $('.cpf').mask('000.000.000-00');
   $('.telefone').mask('(00)00000-0000');
+  $('.cep').mask('00000-000');
+
+  // Pixel Facebook
+  // Botão de Pré-Cadastro
+  $('#btnPreCadastro').click(function () {
+    fbq('track', 'lead');
+  });
+
+  // Botão de Contato
+  $('#btnContato').click(function () {
+    fbq('track', 'lead');
+  });
 });
 
 // Função para ativar animação pelo Scroll

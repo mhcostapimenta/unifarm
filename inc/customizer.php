@@ -231,6 +231,24 @@ function unifarm_customize ( $wp_customize ){
       'settings' => 'set_checkbox_apoio'
   ));
 
+  // GOOGLE TAG MANAGER
+  $wp_customize->add_setting(
+    'set_googletagmanager', array(
+      'type' => 'theme_mod',
+      'default' => 'Aqui entra o código do Google Tag Manager',
+      'sanitize_callback' => 'wp_filter_nohtml_kses'
+    )
+  );
+
+  $wp_customize->add_control(
+    'set_googletagmanager', array(
+      'label' => 'Código do Google Tag Manager',
+      'description' => 'Inserir o código do Google Tag Manager',
+      'section' => 'sec_infos_empresa',
+      'type' => 'text'
+    )
+  ); 
+
 }
 
 add_action( 'customize_register', 'unifarm_customize' );

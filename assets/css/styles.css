@@ -590,8 +590,22 @@ form span {
   background-color: #37b187 !important;
 }
 
+/* [acceptance accept-this-1] Clique aqui para aceitar os termos. [/acceptance] */
+.wpcf7-form input[type='submit'][disabled='disabled'],
+.wpcf7-form input[type='submit']:disabled {
+  background-color: #888;
+  color: #fff !important;
+}
+
 .wpcf7 .ajax-loader {
   display: none !important;
+}
+
+.wpcf7-response-output {
+  background-color: orange;
+  border: 0 solid transparent !important;
+  text-align: center;
+  color: #fff;
 }
 
 /* FAQ */
@@ -869,7 +883,7 @@ form span {
   padding-right: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 @media (max-width: 576px) {
@@ -890,6 +904,15 @@ form span {
     margin-bottom: 24px;
     margin-left: 0;
   }
+}
+
+#content h3 {
+  font-family: 'Jaldi';
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  text-align: left;
+  color: #213b7a;
 }
 
 #content p {
